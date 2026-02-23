@@ -1,7 +1,9 @@
-﻿$saldo = 500; $cheque = 300
-if ($cheque -le $saldo) {
-    $saldo -= $cheque
-    Write-Host "Cheque descontado, saldo atual: $saldo"
+﻿Clear-Host
+$saldo = Read-Host "Saldo atual"
+$cheque = Read-Host "Valor do cheque"
+
+if ([double]$cheque -le [double]$saldo) {
+    "Cheque autorizado. Saldo restante: $([double]$saldo - [double]$cheque)€"
 } else {
-    Write-Host "Saldo insuficiente para o cheque de $cheque"
+    "Saldo insuficiente."
 }
