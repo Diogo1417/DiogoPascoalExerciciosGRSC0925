@@ -1,6 +1,12 @@
-﻿$dia = Read-Host "Introduza o dia da semana"
-switch ($dia.ToLower()) {
-    { $_ -in "segunda", "terca", "quarta", "quinta", "sexta" } { Write-Host "Saída -> Dia útil" }
-    { $_ -in "sabado", "domingo" } { Write-Host "Saída -> Fim de semana" }
-    Default { Write-Host "Entrada inválida" }
+$dia = (Read-Host "Introduza o dia da semana").ToLower()
+
+switch ($dia) {
+    "segunda" { "Dia útil"; break }
+    "terca"   { "Dia útil"; break }
+    "quarta"  { "Dia útil"; break }
+    "quinta"  { "Dia útil"; break }
+    "sexta"   { "Dia útil"; break }
+    "sabado"  { "Fim de semana"; break }
+    "domingo" { "Fim de semana"; break }
+    Default   { "Entrada inválida" }
 }
