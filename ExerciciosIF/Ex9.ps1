@@ -1,8 +1,0 @@
-﻿Clear-Host
-$num = Read-Host "Introduzir o numero do mês (1-12)"
-switch ($num) {
-    1 {"Janeiro"} 2 {"Fevereiro"} 3 {"Março"} 4 {"Abril"}
-    5 {"Maio"} 6 {"Junho"} 7 {"Julho"} 8 {"Agosto"}
-    9 {"Setembro"} 10 {"Outubro"} 11 {"Novembro"} 12 {"Dezembro"}
-    Default {"Mês inválido"}
-}
