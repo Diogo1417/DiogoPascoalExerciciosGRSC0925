@@ -1,4 +1,11 @@
-﻿$nums = 2, 3, 5, 6, 8, 9, 10, 12, 14, 15
-$p = 0; $i = 0
-foreach($n in $nums){ if($n % 2 -eq 0){$p++} else {$i++} }
-Write-Host "Pares: $p | Ímpares: $i"
+﻿Clear-Host
+$entrada = Read-Host "Introduza números (ex: 1,2,3,4)"
+$nums = $entrada.Split(',')
+
+$pares = 0
+foreach ($n in $nums) {
+    if ([int]$n % 2 -eq 0) { $pares++ }
+}
+
+"Pares: $pares"
+"Ímpares: $($nums.Count - $pares)"
