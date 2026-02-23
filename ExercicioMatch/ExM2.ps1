@@ -1,4 +1,4 @@
-﻿$nota = [int](Read-Host "Nota (0-100)")
+﻿$nota = [int](Read-Host "Nota")
 switch ($nota) {
     { $nota -ge 90 } { "Excelente"; break }
     { $nota -ge 70 } { "Bom"; break }
