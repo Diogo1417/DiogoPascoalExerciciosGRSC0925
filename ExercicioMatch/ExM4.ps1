@@ -1,7 +1,24 @@
-﻿$entrada = Read-Host "Introduza um valor (ex: 10, 20, 30 para Lista)"
+﻿$entrada = Read-Host "Introduza um valor"
+
 switch ($entrada) {
-    { $_ -match ',' } { Write-Host "Saída -> Lista" }
-    { $_ -match '^\d+$' } { Write-Host "Saída -> Número inteiro" }
-    { $_ -match '^\d+[\.,]\d+$' } { Write-Host "Saída -> Número decimal" }
-    Default { Write-Host "Saída -> String textual ou desconhecido" }
+
+    { $_.Contains(",") } { 
+        Write-Host "Saída -> Lista"
+        break 
+    }
+    
+    { $_.Contains(".") } { 
+        Write-Host "Saída -> Número decimal"
+        break 
+    }
+
+    { $_ -as [int] } { 
+        Write-Host "Saída -> Número inteiro"
+        break 
+    }
+
+    Default { 
+        Write-Host "Saída -> String textual"
+        break 
+    }
 }
