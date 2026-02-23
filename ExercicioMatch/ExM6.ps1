@@ -1,5 +1,4 @@
-﻿Clear-Host
-$status = Read-Host "Status do servidor (ok/erro)"
+﻿$status = Read-Host "Status do servidor (ok/erro)"
 $tempo = Read-Host "Tempo de resposta (ms)"
 
 switch ($status.ToLower()) {
