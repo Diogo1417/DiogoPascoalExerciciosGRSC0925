@@ -1,4 +1,6 @@
-﻿$n1 = 4; $n2 = 9; $n3 = 2
-$lista = $n1, $n2, $n3
-Write-Host "Crescente: $(($lista | Sort-Object) -join ', ')"
-Write-Host "Decrescente: $(($lista | Sort-Object -Descending) -join ', ')"
+﻿Clear-Host
+$n1 = Read-Host "Num1"; $n2 = Read-Host "Num2"; $n3 = Read-Host "Num3"
+$lista = [int]$n1, [int]$n2, [int]$n3
+
+"Crescente: $(($lista | Sort-Object) -join ', ')"
+"Decrescente: $(($lista | Sort-Object -Descending) -join ', ')"
