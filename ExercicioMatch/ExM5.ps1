@@ -1,11 +1,9 @@
-﻿Clear-Host
-$msg = Read-Host "Introduza uma mensagem"
+﻿$msg = (Read-Host "Mensagem").ToLower()
 
-switch -wildcard ($msg.ToLower()) {
-    "olá"     { "Saudação"; break }
-    "bom dia" { "Saudação"; break }
-    "*\?"     { "Pergunta"; break }
-    "*tchau*" { "Despedida"; break }
-    "*adeus*" { "Despedida"; break }
-    Default   { "Mensagem genérica" }
+switch -wildcard ($msg) {
+    "ola"     { "Saudacao"; break }
+    "bom dia" { "Saudacao"; break }
+    "tchau"   { "Despedida"; break }
+    "adeus"   { "Despedida"; break }
+    Default   { "Mensagem generica" }
 }
