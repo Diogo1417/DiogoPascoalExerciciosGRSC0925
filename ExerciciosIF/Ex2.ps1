@@ -1,4 +1,6 @@
-﻿$num1 = 5; $num2 = 2; $num3 = 8
-$maior = ($num1, $num2, $num3 | Measure-Object -Maximum).Maximum
-$menor = ($num1, $num2, $num3 | Measure-Object -Minimum).Minimum
-Write-Host "Maior: $maior | Menor: $menor"
+﻿Clear-Host
+$n1 = Read-Host "Número 1"; $n2 = Read-Host "Número 2"; $n3 = Read-Host "Número 3"
+$lista = [int]$n1, [int]$n2, [int]$n3
+
+"Maior: $(($lista | Measure-Object -Maximum).Maximum)"
+"Menor: $(($lista | Measure-Object -Minimum).Minimum)"
