@@ -1,10 +1,14 @@
-﻿Clear-Host
-$j1 = (Read-Host "Jogador 1 (pedra/papel/tesoura)").ToLower()
-$j2 = (Read-Host "Jogador 2 (pedra/papel/tesoura)").ToLower()
+﻿$jogador1 = (Read-Host "Jogador 1 (pedra, papel ou tesoura)").ToLower()
+$jogador2 = (Read-Host "Jogador 2 (pedra, papel ou tesoura)").ToLower()
+$resultado = "$jogador1-$jogador2"
 
-switch ("$j1-$j2") {
-    { $_ -in "pedra-tesoura", "tesoura-papel", "papel-pedra" } { "Jogador 1 venceu"; break }
-    { $_ -in "tesoura-pedra", "papel-tesoura", "pedra-papel" } { "Jogador 2 venceu"; break }
-    { $j1 -eq $j2 } { "Empate"; break }
-    Default { "Jogada inválida" }
+switch ($resultado) {
+    "pedra-tesoura" { "Jogador 1 ganhou"; break }
+    "tesoura-papel" { "Jogador 1 ganhou"; break }
+    "papel-pedra"   { "Jogador 1 ganhou"; break }
+    "tesoura-pedra" { "Jogador 2 ganhou"; break }
+    "papel-tesoura" { "Jogador 2 ganhou"; break }
+    "pedra-papel"   { "Jogador 2 ganhou"; break }
+    { $jogador1 -eq $jogador2 }  { "Empate"; break }
+    Default         { "Jogada invalida" }
 }
