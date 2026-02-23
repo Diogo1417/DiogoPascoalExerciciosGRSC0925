@@ -1,7 +1,8 @@
-﻿$nota = Read-Host "Introduza a nota (0-100)"
-switch ([int]$nota) {
-    { $_ -ge 90 } { Write-Host "Saída -> Excelente" }
-    { $_ -ge 70 } { Write-Host "Saída -> Bom" }
-    { $_ -ge 50 } { Write-Host "Saída -> Suficiente" }
-    Default { Write-Host "Saída -> Insuficiente" }
+$nota = [int](Read-Host "Introduza a nota (0-100)")
+
+switch ($nota) {
+    { $nota -ge 90 } { "Saída -> Excelente"; break }
+    { $nota -ge 70 } { "Saída -> Bom"; break }
+    { $nota -ge 50 } { "Saída -> Suficiente"; break }
+    Default          { "Saída -> Insuficiente" }
 }
