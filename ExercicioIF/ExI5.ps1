@@ -1,6 +1,10 @@
-﻿$num1 = [int](Read-Host "NUM1")
-$num2 = [int](Read-Host "NUM2")
-$num3 = [int](Read-Host "NUM3")
+﻿$n1 = [int](Read-Host "NUM1")
+$n2 = [int](Read-Host "NUM2")
+$n3 = [int](Read-Host "NUM3")
 
-$lista = $num1, $num2, $num3 | Sort-Object
-"Ordem: $lista"
+if ($n1 -gt $n2) { $n1, $n2 = $n2, $n1 }
+if ($n2 -gt $n3) { $n2, $n3 = $n3, $n2 }
+if ($n1 -gt $n2) { $n1, $n2 = $n2, $n1 }
+
+"Crescente: $n1 $n2 $n3"
+"Decrescente: $n3 $n2 $n1"
