@@ -1,12 +1,11 @@
-$dia = (Read-Host "Introduza o dia da semana").ToLower()
-
+﻿$dia = (Read-Host "Dia da semana").ToLower()
 switch ($dia) {
-    "segunda" { "Dia útil"; break }
-    "terca"   { "Dia útil"; break }
-    "quarta"  { "Dia útil"; break }
-    "quinta"  { "Dia útil"; break }
-    "sexta"   { "Dia útil"; break }
+    "segunda" { "Dia util"; break }
+    "terca"   { "Dia util"; break }
+    "quarta"  { "Dia util"; break }
+    "quinta"  { "Dia util"; break }
+    "sexta"   { "Dia util"; break }
     "sabado"  { "Fim de semana"; break }
     "domingo" { "Fim de semana"; break }
-    Default   { "Entrada inválida" }
+    Default   { "Invalido" }
 }
