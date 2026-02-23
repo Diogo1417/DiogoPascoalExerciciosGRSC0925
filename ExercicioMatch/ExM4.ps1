@@ -1,24 +1,8 @@
-﻿$entrada = Read-Host "Introduza um valor"
-
-switch ($entrada) {
-
-    { $_.Contains(",") } { 
-        Write-Host "Saída -> Lista"
-        break 
-    }
-    
-    { $_.Contains(".") } { 
-        Write-Host "Saída -> Número decimal"
-        break 
-    }
-
-    { $_ -as [int] } { 
-        Write-Host "Saída -> Número inteiro"
-        break 
-    }
-
-    Default { 
-        Write-Host "Saída -> String textual"
-        break 
-    }
+﻿Clear-Host
+$input = Read-Host "Introduza algo"
+switch ($input) {
+    { $input.Contains(",") } { "Lista"; break }
+    { $input.Contains(".") } { "Decimal"; break }
+    { $input -as [int] }     { "Inteiro"; break }
+    Default                  { "Texto" }
 }
