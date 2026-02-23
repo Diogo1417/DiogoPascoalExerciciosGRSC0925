@@ -1,6 +1,7 @@
-﻿$pedido = @{ tipo = "venda"; valor = 250 }
-switch ($pedido.tipo) {
-    "compra" { "Compra de $($pedido.valor)€" }
-    "venda"  { "Venda de $($pedido.valor)€" }
-    default  { "Pedido desconhecido" }
+﻿$tipo = Read-Host "Tipo de pedido (compra/venda)"
+$valor = Read-Host "Valor em €"
+switch ($tipo.ToLower()) {
+    "compra" { Write-Host "Saída -> Compra de $($valor)€" }
+    "venda"  { Write-Host "Saída -> Venda de $($valor)€" }
+    Default  { Write-Host "Saída -> Pedido desconhecido" }
 }
