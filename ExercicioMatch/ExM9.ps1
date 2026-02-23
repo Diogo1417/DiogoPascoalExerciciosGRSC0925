@@ -1,12 +1,20 @@
-﻿Clear-Host
-$metodo = Read-Host "Método (GET/POST)"
-$conteudo = Read-Host "Conteúdo: "
+﻿$metodo = (Read-Host "Metodo (GET ou POST)").ToUpper()
+$conteudo = Read-Host "Conteudo"
 
-switch ($metodo.ToUpper()) {
-    "GET" { "Requisição GET recebida"; break }
-    "POST" {
-        if ($conteudo -ne "") { "Requisição POST com dados válidos"; break }
-        "Requisição POST sem dados"; break
+switch ($metodo) {
+    "GET" { 
+        "Requisicao de leitura"
+        break 
     }
-    Default { "Método não suportado" }
+    "POST" {
+        if ($conteudo -eq "") { 
+            "POST sem dados"
+        } else {
+            "POST com dados"
+        }
+        break
+    }
+    Default { 
+        "Metodo invalido" 
+    }
 }
